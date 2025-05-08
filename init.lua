@@ -144,8 +144,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'sindrets/diffview.nvim', -- Git diffview
-  'Shatur/neovim-session-manager', -- Manage sessions like in VSCode
-
+  -- Plugins
   { import = 'plugins' },
 
   -- LSP Plugins
