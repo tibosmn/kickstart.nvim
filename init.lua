@@ -143,7 +143,6 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'sindrets/diffview.nvim', -- Git diffview
   -- Plugins
   { import = 'plugins' },
 
