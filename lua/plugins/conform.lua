@@ -23,7 +23,7 @@ return { -- Autoformat
         return nil
       else
         return {
-          timeout_ms = 500,
+          timeout_ms = 2000,
           lsp_format = 'fallback',
         }
       end
@@ -37,9 +37,23 @@ return { -- Autoformat
       javascript = { 'prettierd' },
       typescript = { 'prettierd' },
       typescriptreact = { 'prettierd' },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      json = { 'prettierd' },
+
+      markdown = { 'markdownlint' },
+      sh = { 'shfmt' },
+    },
+  },
+  formatters = {
+    markdownlint = {
+      command = 'markdownlint',
+      args = {
+        '--stdin',
+        '--stdin-filename',
+        '$FILENAME',
+        '--disable',
+        'MD013', -- disable line length rule
+      },
+      stdin = true,
     },
   },
 }
