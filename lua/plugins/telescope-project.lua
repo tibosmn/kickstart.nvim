@@ -2,16 +2,17 @@ return {
   'nvim-telescope/telescope-project.nvim',
   dependencies = { 'nvim-telescope/telescope.nvim' },
   config = function()
+    local project_actions = require 'telescope._extensions.project.actions'
     require('telescope').setup {
       extensions = {
         project = {
           base_dirs = {
             { '~/Documents/projects/', max_depth = 3 },
           },
-          on_project_selected = function(prompt_bufnr)
-            -- Do anything you want in here. For example:
-            project_actions.change_working_directory(prompt_bufnr, false)
-          end,
+          -- on_project_selected = function(prompt_bufnr)
+          --   -- Do anything you want in here. For example:
+          --   project_actions.change_working_directory(prompt_bufnr, false)
+          -- end,
         },
       },
     }
